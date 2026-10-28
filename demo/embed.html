@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Light Viewer — вставка без фреймворка</title>
+    <style>
+      body { font: 15px/1.5 system-ui, sans-serif; max-width: 960px; margin: 24px auto; padding: 0 16px; color: #222; }
+      luminaire-viewer { height: 420px; border-radius: 12px; overflow: hidden; margin: 16px 0 32px; }
+      code { background: #f1f1f1; padding: 1px 4px; border-radius: 4px; }
+    </style>
+    <!-- На реальном сайте здесь будет <script type="module" src="luminaire-viewer.standalone.js"> -->
+    <script type="module" src="./src/embed.ts"></script>
+  </head>
+  <body>
+    <h1>Карточка товара (пример вставки)</h1>
+    <p>Так модуль выглядит на обычной HTML-странице без React: только тег <code>&lt;luminaire-viewer&gt;</code> с атрибутами.</p>
+
+    <h2>Светильник в 3D</h2>
+    <luminaire-viewer shape="puck" ies="ies/lambert.ies" preset="studio" solid></luminaire-viewer>
+
+    <h2>Как он осветит офис 6 × 4 м</h2>
+    <luminaire-viewer shape="puck" ies="ies/lambert.ies" preset="office" view="lux" count-x="3" count-z="2"></luminaire-viewer>
+  </body>
+</html>

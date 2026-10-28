@@ -1,0 +1,38 @@
+{
+  "name": "light-viewer",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && npm run build:lib && npm run build:demo",
+    "build:lib": "vite build --config vite.lib.config.ts && vite build --config vite.lib.config.ts --mode standalone",
+    "build:demo": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "gen:ies": "tsx scripts/generate-ies.ts",
+    "gen:glb": "tsx scripts/generate-sample-glb.ts"
+  },
+  "license": "UNLICENSED",
+  "description": "Прототип встраиваемого 3D-просмотрщика светильников с IES-фотометрией и картой освещённости",
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "private": true,
+  "type": "module",
+  "peerDependencies": {
+    "three": "^0.186.1"
+  }
+}
